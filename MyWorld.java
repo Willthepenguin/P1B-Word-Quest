@@ -1,21 +1,48 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class MyWorld extends World
 {
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    private GreenfootImage background;
+    private Button play;
+    private Button settings;
+    
+    // Temporary for temp character to work
+    //public static final int PLAYER_WIDTH = 64;
+    //public static final int PLAYER_HEIGHT = 64;
+    //public static final int PLAYER_BASE_SPEED = 3;
+    //private int playerDirection;
+    //private int playerSpeed
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        
+        super(800, 600, 1); 
+        setBackground(drawSpace(800,600,40));
+        play = new Button ("Play");
+        addObject(play, 200, 400);
+        
+        settings = new Button("Settings");
+        addObject(settings, 600, 400);
+        
+    }
+    
+    public void act () {
+        checkKeys();
+        
+    }
+    // Temporary Background can change colour
+    public static GreenfootImage drawSpace (int width, int height, int density){
+        // Draws the background as gray.
+        GreenfootImage world = new GreenfootImage (width, height);
+        world.setColor (Color.DARK_GRAY);
+        world.fill();
+        
+        return world;
+    }
+    
+    private void checkKeys() {
+        
+        
     }
 }
