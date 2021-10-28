@@ -1,23 +1,35 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ *  This world is intended to demonstrate AnimatedCharacter.
+ *  
+ *  Please see the documentation of the AnimatedCharacter for API and for
+ *  detailed instructions on how to get started.
+ */
 
 public class MyWorld extends World
 {
-
+    private SimplePlayer sp;
+    
     private GreenfootImage background;
     private Button play;
     private Button settings;
     
-    // Temporary for temp character to work
-    //public static final int PLAYER_WIDTH = 64;
-    //public static final int PLAYER_HEIGHT = 64;
-    //public static final int PLAYER_BASE_SPEED = 3;
-    //private int playerDirection;
-    //private int playerSpeed
+    
+
+    
+
+    /**
+     * Constructor for objects of class MyWorld.
+     */
     public MyWorld()
     {    
-        
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+        
+        sp = new SimplePlayer();
+        addObject (sp, 400, 300);
+       
         setBackground(drawSpace(800,600,40));
         play = new Button ("Play");
         addObject(play, 200, 400);
@@ -25,13 +37,17 @@ public class MyWorld extends World
         settings = new Button("Settings");
         addObject(settings, 600, 400);
         
+
     }
-    // Constantly checks if player clicked a button
-    public void act () {
-        checkKeys();
-        
+
+    public void act ()
+    {
+        /**if (Greenfoot.isKeyDown("o")){
+            p.stopMoving();
+            p.setLocation (300, 200);
+        }*/
     }
-    // Temporary Background can change colour
+    
     public static GreenfootImage drawSpace (int width, int height, int density){
         // Draws the background as gray.
         GreenfootImage world = new GreenfootImage (width, height);
@@ -39,10 +55,5 @@ public class MyWorld extends World
         world.fill();
         
         return world;
-    }
-    // Method to go to WordWorld when press key on button
-    private void checkKeys() {
-        
-        
     }
 }
