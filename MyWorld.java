@@ -26,7 +26,7 @@ public class MyWorld extends World
         addObject(settings, 600, 400);
         
     }
-    
+    // Constantly checks if player clicked a button
     public void act () {
         checkKeys();
         
@@ -40,7 +40,7 @@ public class MyWorld extends World
         
         return world;
     }
-    
+    // Method to go to WordWorld when press key on button
     private void checkKeys() {
         
         
