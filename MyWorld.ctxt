@@ -2,6 +2,10 @@
 comment0.target=MyWorld
 comment1.params=
 comment1.target=MyWorld()
-comment2.params=width\ height\ density
-comment2.target=greenfoot.GreenfootImage\ drawSpace(int,\ int,\ int)
-numComments=3
+comment2.params=
+comment2.target=void\ act()
+comment3.params=width\ height\ density
+comment3.target=greenfoot.GreenfootImage\ drawSpace(int,\ int,\ int)
+comment4.params=
+comment4.target=void\ checkKeys()
+numComments=5

@@ -5,17 +5,30 @@ public class MyWorld extends World
 {
 
     private GreenfootImage background;
+    private Button play;
+    private Button settings;
     
     // Temporary for temp character to work
     //public static final int PLAYER_WIDTH = 64;
     //public static final int PLAYER_HEIGHT = 64;
     //public static final int PLAYER_BASE_SPEED = 3;
+    //private int playerDirection;
+    //private int playerSpeed
     public MyWorld()
     {    
         
         super(800, 600, 1); 
         setBackground(drawSpace(800,600,40));
+        play = new Button ("Play");
+        addObject(play, 200, 400);
         
+        settings = new Button("Settings");
+        addObject(settings, 600, 400);
+        
+    }
+    
+    public void act () {
+        checkKeys();
         
     }
     // Temporary Background can change colour
@@ -26,5 +39,10 @@ public class MyWorld extends World
         world.fill();
         
         return world;
+    }
+    
+    private void checkKeys() {
+        
+        
     }
 }
