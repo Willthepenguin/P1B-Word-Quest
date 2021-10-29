@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ArrayABC extends Actor
 {
-      public static void main(String[] args){
+      public void alpha(int element){
           String[] alphabet = {"a" , "b" , "c" , "d" , "e" , "f", "g", "h" , "i" , "j" , "k", "l", "m", "n" , "o" , "p" , "q", "r", "s", "t" , "u" , "v", "w", "x" , "y", "z"};
+          String temp = alphabet[element];
           
           
-          
-        }
+      }
 }

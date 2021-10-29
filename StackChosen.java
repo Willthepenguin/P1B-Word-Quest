@@ -8,9 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StackChosen extends Stack
 {
+    public void input(int item){
+        Stack<> chosen = new Stack<String>();
+        String temp = ArrayABC.alpha(item);
+        chosen.push(temp);
     
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    }
 }
