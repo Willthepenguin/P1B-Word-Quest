@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MyWorld extends World
 {
-    private SimplePlayer sp;
     
     private GreenfootImage background;
     private Button play;
@@ -27,9 +26,6 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         
-        sp = new SimplePlayer();
-        addObject (sp, 400, 300);
-       
         setBackground(drawSpace(800,600,40));
         play = new Button ("Play");
         addObject(play, 200, 400);
@@ -42,10 +38,7 @@ public class MyWorld extends World
 
     public void act ()
     {
-        /**if (Greenfoot.isKeyDown("o")){
-            p.stopMoving();
-            p.setLocation (300, 200);
-        }*/
+        mouseClicked();
     }
     
     public static GreenfootImage drawSpace (int width, int height, int density){
@@ -55,5 +48,11 @@ public class MyWorld extends World
         world.fill();
         
         return world;
+    }
+    
+    private void mouseClicked(){
+        if (Greenfoot.mouseClicked(play)){
+            Greenfoot.setWorld(new Rules());
+        }
     }
 }

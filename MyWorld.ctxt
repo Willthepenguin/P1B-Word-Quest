@@ -8,4 +8,6 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=width\ height\ density
 comment3.target=greenfoot.GreenfootImage\ drawSpace(int,\ int,\ int)
-numComments=4
+comment4.params=
+comment4.target=void\ mouseClicked()
+numComments=5

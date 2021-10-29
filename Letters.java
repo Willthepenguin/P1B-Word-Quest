@@ -42,7 +42,7 @@ public class Letters extends Actor
         setImage (image);
         // Adding this for counting letters in world and for deleting
         removeMe = false;
-        lettersOn = WordWorld.totalButtonsOn;
+        
         
         
     }
