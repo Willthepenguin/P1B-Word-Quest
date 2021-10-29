@@ -20,6 +20,7 @@ public class Letters extends Actor
     
     protected boolean removeMe;
     protected int lettersOn;
+    protected int timeLeft;
     
     
     
@@ -43,6 +44,7 @@ public class Letters extends Actor
         // Adding this for counting letters in world and for deleting
         removeMe = false;
         lettersOn = WordWorld.totalButtonsOn;
+        timeLeft = WordWorld.buttonsOnTime;
         
         
     }
@@ -50,6 +52,11 @@ public class Letters extends Actor
     public void act() 
     {
         setImage(image);
+        if(timeLeft >= 600 || lettersOn >= 20)
+        {
+            removeMe = true;
+        }
+        
         if(removeMe){
             getWorld().removeObject(this);
             lettersOn--;
