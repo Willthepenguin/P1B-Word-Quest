@@ -1,17 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class AssembleWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class AssembleWorld extends World
 {
+    private SimplePlayer sp;
     
     public AssembleWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 600, 1); 
+        
+        sp = new SimplePlayer();
+        addObject (sp, 400, 300);
     }
 }

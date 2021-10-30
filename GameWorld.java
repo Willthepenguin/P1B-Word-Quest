@@ -28,7 +28,7 @@ public class GameWorld extends World
     
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(moveOn)){
-            Greenfoot.setWorld(new AssembleWorld());
+            Greenfoot.setWorld(new Transition1());
         }
     }
 }
