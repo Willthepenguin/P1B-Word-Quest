@@ -19,6 +19,12 @@ public class Rules extends World
         setBackground(drawSpace(800,600,40));
         cont = new Button ("Continue");
         addObject(cont, 400, 500);
+        
+        getBackground().drawImage(new GreenfootImage("You have 60 seconds to pick up as many letters as possible." ,32, null, null), 50, 100);
+        getBackground().drawImage(new GreenfootImage("Use your mouse to click on the letters you want to pick up.", 32, null, null) , 50, 200);
+        
+        getBackground().drawImage(new GreenfootImage("Hint: Be careful about what letters you pick up!" ,32, null, null), 100, 300);
+
     }
     
     public void act (){

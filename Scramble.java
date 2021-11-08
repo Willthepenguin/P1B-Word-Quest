@@ -34,7 +34,7 @@ public class Scramble extends Actor
     public void addLetter(){
         int randX = Greenfoot.getRandomNumber(700);
         int randY = Greenfoot.getRandomNumber(420);
-        addObject(label, randX + 50, randY + 180);
+        //addObject(label, randX + 50, randY + 180);
         label = new Label (s.pop());
     }
 }
