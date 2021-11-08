@@ -16,6 +16,9 @@ public class GameWorld extends World
     private int time;
     private int timeRemaining;
     
+    private int spawnTime;
+    private int spawnTimeRemaining;
+    
     private StatBar timerBar;
     
     Stack<String> s = new Stack<String>();
@@ -36,6 +39,9 @@ public class GameWorld extends World
     
         time = 55*60;
         timeRemaining = time;
+        
+        spawnTime = 55*1;
+        spawnTimeRemaining = time;
         
         timerBar = new StatBar (time, timeRemaining, null, 800, 20, 0, 
         timeStillColor, timeLeftColor, false, borderColor, 2);
@@ -58,7 +64,13 @@ public class GameWorld extends World
     public void act() {
         mouseClicked();
         
-        addLetter();
+        if (spawnTime != 0){
+            spawnTimeRemaining = spawnTimeRemaining - 1;
+            spawnLetter();
+        }
+       
+            
+        
         
         if (time != 0){
             timeRemaining = timeRemaining - 1;
@@ -71,13 +83,13 @@ public class GameWorld extends World
         }
     }
     
-    public void addLetter(){
+    public void spawnLetter(){
         int randX = Greenfoot.getRandomNumber(700);
         int randY = Greenfoot.getRandomNumber(420);
-        for (int i = 0; i < 5; i++){
-            label = new Label (s.pop());
-            addObject(label, randX + 50, randY + 180);
-        }
+        
+        label = new Label (s.pop());
+        addObject(label, randX + 50, randY + 180);
+        
     }
     
     private void mouseClicked(){
