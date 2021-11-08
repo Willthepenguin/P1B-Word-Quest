@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Reader
-comment1.params=list
-comment1.target=void\ readIntoVerb(java.util.ArrayList)
-comment2.params=list
-comment2.target=void\ readIntoAlpha(java.util.ArrayList)
-numComments=3

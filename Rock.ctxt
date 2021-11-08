@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Rock
+comment0.text=\r\n\ A\ dumb\ obstacle\ that\ just\ sits\ there\ and\ does\ nothing,\ to\r\n\ demonstrate\ collision\ detection\ in\ movement.\r\n\ \r\n\ This\ same\ object\ is\ used\ for\ collision\ detection\ in\ both\ SimplePlayer\r\n\ and\ ComplexPlayer.\ \r\n\ \r\n\ In\ SimplePlayer,\ this\ acts\ just\ like\ any\ other\ Greenfoot\ Actor\ -\ just\ by\r\n\ being\ in\ the\ World,\ collision\ can\ be\ checked\ against\ it\ (see\ Actor\ API).\r\n\ \r\n\ In\ ComplexPlayer,\ the\ Collider\ collider\ will\ be\ used\ for\ collision.\ This\ means\ that\r\n\ you\ could\ optionally\:\r\n\ -\ Make\ the\ collision\ smaller\ or\ larger\ than\ the\ Actor\ object's\ image\r\n\ -\ Disable\ and\ enable\ collision\ for\ this\ object\ dynamically\r\n\ -\ Offset\ the\ collision\ from\ the\ Actor\ object\r\n\ \r\n\ The\ additional\ benefit\ is\ that\ this\ can\ be\ used\ by\ the\ directional\ collision\ detection\r\n\ that\ comes\ with\ AnimatedCharacter.\r\n\ \r\n\ In\ this\ case,\ the\ Collider's\ size\ is\ set\ to\ the\ same\ size\ as\ the\ Actor.\r\n
+comment1.params=
+comment1.target=Rock()
+comment2.params=w
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Rock\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=4
