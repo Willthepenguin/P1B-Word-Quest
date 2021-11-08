@@ -2,4 +2,6 @@
 comment0.target=AssembleWorld
 comment1.params=
 comment1.target=AssembleWorld()
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3
