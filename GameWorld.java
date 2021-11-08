@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class GameWorld extends World
 {
     private Button moveOn;
-    private SimplePlayer sp;
+
     
     public final Color streakaddColor = new Color (34, 177, 76);
     public final Color streakminusColor = new Color (255, 0, 0);
@@ -24,7 +24,11 @@ public class GameWorld extends World
     Stack<String> s = new Stack<String>();
     ArrayList<String> theList = new ArrayList<String>();
     
-    private Label label;
+    
+    
+    private LetterButton label;
+    
+    private int counter = 0;
     
     public GameWorld()
     {    
@@ -34,13 +38,12 @@ public class GameWorld extends World
         moveOn = new Button ("Next");
         addObject(moveOn, 700, 550);
         
-        sp = new SimplePlayer();
-        addObject (sp, 400, 300);                
+              
     
         time = 55*60;
         timeRemaining = time;
         
-        spawnTime = 55*1;
+        spawnTime = 1;
         spawnTimeRemaining = time;
         
         timerBar = new StatBar (time, timeRemaining, null, 800, 20, 0, 
@@ -64,14 +67,17 @@ public class GameWorld extends World
     public void act() {
         mouseClicked();
         
-        if (spawnTime != 0){
-            spawnTimeRemaining = spawnTimeRemaining - 1;
-            spawnLetter();
+        if (spawnTime != 27){
+            if (counter % 3 != 0){
+                counter++;
+                
+            }
+            if (counter % 3 == 0){   
+                 spawnLetter();
+                 spawnTime += 1;
+                }
         }
        
-            
-        
-        
         if (time != 0){
             timeRemaining = timeRemaining - 1;
             timerBar.update(timeRemaining);
@@ -84,17 +90,24 @@ public class GameWorld extends World
     }
     
     public void spawnLetter(){
-        int randX = Greenfoot.getRandomNumber(700);
-        int randY = Greenfoot.getRandomNumber(420);
+        int randX = Greenfoot.getRandomNumber(600);
+        int randY = Greenfoot.getRandomNumber(350);
         
-        label = new Label (s.pop());
+        label = new LetterButton (s.pop());
         addObject(label, randX + 50, randY + 180);
+        
         
     }
     
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(moveOn)){
             Greenfoot.setWorld(new Transition1());
+        }
+    }
+    
+    private void checkLetterClick(){
+        if (Greenfoot.mouseClicked(label)){
+            
         }
     }
 }
