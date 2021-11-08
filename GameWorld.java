@@ -49,7 +49,7 @@ public class GameWorld extends World
         }
         
         if (timeRemaining == 0){
-            Greenfoot.setWorld(new AssembleWorld());
+            Greenfoot.setWorld(new Transition1());
         }
     }
     
