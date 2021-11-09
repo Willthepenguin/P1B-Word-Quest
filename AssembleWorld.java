@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 public class AssembleWorld extends World
 {
  
@@ -36,10 +36,15 @@ public class AssembleWorld extends World
         addObject(new Timer(), 400, 30);
         
         
+        
+       
     }
     
+    
+  
+    
     public void act(){
-        spawnLetter();
+        
         if (time != 0){
             timeRemaining = timeRemaining - 1;
             timerBar.update(timeRemaining);
@@ -49,7 +54,8 @@ public class AssembleWorld extends World
         if (timeRemaining == 0){
             Greenfoot.setWorld(new EndScreen());
         }
-        
+
+        spawnLetter();
         
     }
     
@@ -63,4 +69,7 @@ public class AssembleWorld extends World
         
         
     }
+    
+    
+    
 }

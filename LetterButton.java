@@ -42,11 +42,15 @@ public class LetterButton extends Actor
     {
         if(Greenfoot.mouseClicked(this) && counter != 0)
         {
-            GameWorld world = (GameWorld) getWorld();
-            world.storeLetter(text);
-            world.removeObject(this);
+            
+            GameWorld thisWorld = (GameWorld) getWorld();
+            thisWorld.storeLetter(text);
+          
+            thisWorld.removeObject(this);
             counter--;
         }
+        
+        
         
         
         

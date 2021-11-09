@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList; 
+import java.util.List;
 
 public class GameWorld extends World
 {
@@ -24,7 +25,7 @@ public class GameWorld extends World
     Stack<String> s = new Stack<String>();
     ArrayList<String> theList = new ArrayList<String>();
     
-    Stack<String> storedLetters = new Stack<String>();
+    static Stack<String> storedLetters = new Stack<String>();
     
     
     private LetterButton label;
@@ -87,19 +88,13 @@ public class GameWorld extends World
             timeRemaining = timeRemaining - 1;
             timerBar.update(timeRemaining);
 
-        }
+       }
         
-        //if (timeRemaining == 0){
-            //Greenfoot.setWorld(new Transition1());
-            //AssembleWorld confirm = new AssembleWorld();
-            //confirm.letterStorage = this.storedLetters;
-        //}
-        
-        if (storedLetters.getSize() == 10){
-            AssembleWorld confirm = new AssembleWorld();
-            confirm.letterStorage = this.storedLetters;
-            Greenfoot.setWorld(new Transition1());
-        }
+      
+       if (storedLetters.getSize() == 10){
+            List objects = getObjects(null);
+            removeObjects(objects); 
+       }
     }
     
     public void spawnLetter(){
