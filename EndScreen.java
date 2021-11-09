@@ -13,11 +13,12 @@ public class EndScreen extends World
      * Constructor for objects of class EndScreen.
      * 
      */
+     private GreenfootSound end=new GreenfootSound("[Arknights OST] shop.mp3");
     public EndScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+        end.playLoop();
         
     }
 }
