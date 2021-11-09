@@ -22,9 +22,15 @@ public class Transition1 extends World
         confirm = new Button("I understand");
         addObject(confirm, 700, 550);
         // Fix formating
-        getBackground().drawImage(new GreenfootImage("Form as many words as possible using the letters collected related to the given topic." ,32, null, null), 0, 100);
+        getBackground().drawImage(new GreenfootImage("Form as many words as possible using the letters " ,32, null, null), 100, 100);
+        getBackground().drawImage(new GreenfootImage("collected related to the given topic." ,32, null, null), 150, 150);
+        getBackground().drawImage(new GreenfootImage("You will be given points based on the number of " ,32, null, null), 100, 300);
+        getBackground().drawImage(new GreenfootImage("words you create." ,32, null, null), 300, 350);
         
-        getBackground().drawImage(new GreenfootImage("You will be given points according to how many words you assemble." ,32, null, null), 50, 200);
+        
+        
+        
+        
 
 
     }
