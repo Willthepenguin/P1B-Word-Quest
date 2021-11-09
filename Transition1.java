@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Transition1 extends World
 {
     private Button confirm;
-    
+    private GreenfootSound transition=new GreenfootSound("Drive Me Wild.mp3");
     /**
      * Constructor for objects of class Transition1.
      * 
@@ -18,7 +18,7 @@ public class Transition1 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+        transition.playLoop();
         confirm = new Button("I understand");
         addObject(confirm, 700, 550);
     }
@@ -30,6 +30,7 @@ public class Transition1 extends World
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(confirm)){
             Greenfoot.setWorld(new AssembleWorld());
+            transition.stop();
         }
     }
 }
