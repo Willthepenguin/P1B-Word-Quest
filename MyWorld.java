@@ -52,6 +52,7 @@ public class MyWorld extends World
     
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(play)){
+            main.stop();
             Greenfoot.setWorld(new Rules());
         }
     }
