@@ -26,6 +26,7 @@ public class GameWorld extends World
     
     
     
+    
     private LetterButton label;
     
     private int counter = 0;
@@ -66,7 +67,7 @@ public class GameWorld extends World
     
     public void act() {
         mouseClicked();
-        
+        checkLetterClick();
         if (spawnTime != 27){
             if (counter % 3 != 0){
                 counter++;
@@ -94,6 +95,7 @@ public class GameWorld extends World
         int randY = Greenfoot.getRandomNumber(350);
         
         label = new LetterButton (s.pop());
+        
         addObject(label, randX + 50, randY + 180);
         
         
@@ -107,7 +109,7 @@ public class GameWorld extends World
     
     private void checkLetterClick(){
         if (Greenfoot.mouseClicked(label)){
-            
+            removeObject(label);
         }
     }
 }
