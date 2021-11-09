@@ -13,7 +13,7 @@ public class MyWorld extends World
     private GreenfootImage background;
     private Button play;
     private Button settings;
-    
+    private GreenfootSound main=new GreenfootSound("Kether battle 3");
     
 
     
@@ -25,7 +25,7 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+        main.playLoop();
         setBackground(drawSpace(800,600,40));
         play = new Button ("Play");
         addObject(play, 200, 400);
