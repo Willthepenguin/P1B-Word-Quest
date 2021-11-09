@@ -17,6 +17,20 @@ public class EndScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+        GreenfootImage image = new GreenfootImage("Word.png");
+        image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
+        getBackground().drawImage(image, 0, 0);
+        
+        getBackground().drawImage(new GreenfootImage("Thanks for Playing!" ,32, null, null), 275, 200);
+        getBackground().drawImage(new GreenfootImage("Your Score:" ,32, null, null), 325, 300);
+        //Score
+        // getBackground().drawImage(new GreenfootImage(score ,32, null, null), 350, 350);
+        
+        getBackground().drawImage(new GreenfootImage("Our Personal High Scores!" ,32, null, null), 250, 450);
+        
+        
+        
+        
         
         
     }
