@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LetterButton extends Actor
 {
     public static final double FONT_RATIO = 0.58;
-    private String myText;
+    private String text;
 
     private int drawX;
     private int drawY;
@@ -17,10 +17,10 @@ public class LetterButton extends Actor
     public LetterButton (String text) {
         image = new GreenfootImage (40, 40);
         touchingImage = new GreenfootImage (180, 40);
-        myText = text;
+        this.text = text;
         // Prepare for centering:
         // How many letters?
-        int wordLength = myText.length();  
+        int wordLength = text.length();  
         // How many pixels?
         int wordWidth = (int)(wordLength * buttonFont.getSize() * FONT_RATIO); 
         drawX = (image.getWidth() - wordWidth)/2;
@@ -36,7 +36,12 @@ public class LetterButton extends Actor
     
     public void act() 
     {
-        setImage(image);
+        if(Greenfoot.mouseClicked(this))
+        {
+            GameWorld world = (GameWorld) getWorld();
+            world.storeLetter(text);
+            world.removeObject(this);
+        }
         
     }
     
@@ -45,6 +50,6 @@ public class LetterButton extends Actor
         image.fill();
         image.setColor(Color.BLUE);
         image.setFont (buttonFont);
-        image.drawString (myText, drawX, drawY);
+        image.drawString (text, drawX, drawY);
     }
 }

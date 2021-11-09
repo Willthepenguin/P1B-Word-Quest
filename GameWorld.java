@@ -24,7 +24,7 @@ public class GameWorld extends World
     Stack<String> s = new Stack<String>();
     ArrayList<String> theList = new ArrayList<String>();
     
-    
+    Stack<String> storedLetters = new Stack<String>();
     
     
     private LetterButton label;
@@ -63,6 +63,11 @@ public class GameWorld extends World
         }
         
         
+    }
+    
+    public void storeLetter(String text)
+    {
+        storedLetters.push(text);
     }
     
     public void act() {
