@@ -30,7 +30,6 @@ public class GameWorld extends World
     private LetterButton label;
     
     private int counter = 0;
-    
     public GameWorld()
     {    
         
@@ -72,7 +71,7 @@ public class GameWorld extends World
     
     public void act() {
         mouseClicked();
-        checkLetterClick();
+        
         if (spawnTime != 27){
             if (counter % 3 != 0){
                 counter++;
@@ -93,6 +92,10 @@ public class GameWorld extends World
         if (timeRemaining == 0){
             Greenfoot.setWorld(new Transition1());
         }
+        
+        if (storedLetters.getSize() == 10){
+            Greenfoot.setWorld(new Transition1());
+        }
     }
     
     public void spawnLetter(){
@@ -106,15 +109,12 @@ public class GameWorld extends World
         
     }
     
+   
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(moveOn)){
             Greenfoot.setWorld(new Transition1());
         }
     }
     
-    private void checkLetterClick(){
-        if (Greenfoot.mouseClicked(label)){
-            removeObject(label);
-        }
-    }
+    
 }

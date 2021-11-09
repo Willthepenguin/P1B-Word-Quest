@@ -3,6 +3,7 @@ import java.util.Iterator;
 public class Stack<E> implements Iterable<E>
 {
     private Node first = null;
+    private int size = 0;
     
     private class Node {
         private E item;
@@ -14,13 +15,19 @@ public class Stack<E> implements Iterable<E>
     }
     
     public void push(E item) {
+        size++;
         Node second = first;
         first = new Node();
         first.item = item;
         first.next = second;
     }
     
+    public int getSize() {
+        return size;
+    }
+    
     public E pop() {
+        size--;
         E item = first.item;
         first = first.next;
         return item;

@@ -13,6 +13,10 @@ public class LetterButton extends Actor
     
     private Font buttonFont = new Font("Courier New",  true,  false,  24);
     
+    private int counter = 10;
+    
+    private int timeReset = 0;
+    
     
     public LetterButton (String text) {
         image = new GreenfootImage (40, 40);
@@ -36,12 +40,15 @@ public class LetterButton extends Actor
     
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this) && counter != 0)
         {
             GameWorld world = (GameWorld) getWorld();
             world.storeLetter(text);
             world.removeObject(this);
+            counter--;
         }
+        
+        
         
     }
     
