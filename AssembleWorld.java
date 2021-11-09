@@ -15,6 +15,10 @@ public class AssembleWorld extends World
     
     private StatBar timerBar;
     
+    private LetterButton label;
+    
+    Stack<String> letterStorage = new Stack<String>();
+    
     public AssembleWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,9 +34,12 @@ public class AssembleWorld extends World
         
         addObject (timerBar, 400, 100);
         addObject(new Timer(), 400, 30);
+        
+        
     }
     
     public void act(){
+        spawnLetter();
         if (time != 0){
             timeRemaining = timeRemaining - 1;
             timerBar.update(timeRemaining);
@@ -42,5 +49,18 @@ public class AssembleWorld extends World
         if (timeRemaining == 0){
             Greenfoot.setWorld(new EndScreen());
         }
+        
+        
+    }
+    
+    public void spawnLetter(){
+        int randX = Greenfoot.getRandomNumber(600);
+        int randY = Greenfoot.getRandomNumber(350);
+        
+        label = new LetterButton (letterStorage.pop());
+        
+        addObject(label, randX + 50, randY + 180);
+        
+        
     }
 }

@@ -89,11 +89,15 @@ public class GameWorld extends World
 
         }
         
-        if (timeRemaining == 0){
-            Greenfoot.setWorld(new Transition1());
-        }
+        //if (timeRemaining == 0){
+            //Greenfoot.setWorld(new Transition1());
+            //AssembleWorld confirm = new AssembleWorld();
+            //confirm.letterStorage = this.storedLetters;
+        //}
         
         if (storedLetters.getSize() == 10){
+            AssembleWorld confirm = new AssembleWorld();
+            confirm.letterStorage = this.storedLetters;
             Greenfoot.setWorld(new Transition1());
         }
     }
