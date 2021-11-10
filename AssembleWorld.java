@@ -1,5 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+import java.util.ArrayList;
+
 public class AssembleWorld extends World
 {
  
@@ -12,14 +14,20 @@ public class AssembleWorld extends World
 
     private int time;
     private int timeRemaining;
+    private int spawnTime;
+    private int spawnTimeRemaining;
+    private int counter = 0;
     
     private StatBar timerBar;
     
     private LetterButton label;
     
     Stack<String> letterStorage = new Stack<String>();
+    ArrayList<String> verbList = new ArrayList<String>();
     
-    public AssembleWorld()
+    
+    
+    public AssembleWorld(Stack<String> a)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
@@ -35,9 +43,17 @@ public class AssembleWorld extends World
         addObject (timerBar, 400, 100);
         addObject(new Timer(), 400, 30);
         
+        for (String str: a){
+            letterStorage.push(str);
+        }
         
         
-       
+        try{
+            Reader.readIntoVerb(verbList);
+            } catch(Exception e) {
+        }
+        
+     
     }
     
     
@@ -55,7 +71,17 @@ public class AssembleWorld extends World
             Greenfoot.setWorld(new EndScreen());
         }
 
-        spawnLetter();
+        if (spawnTime != 10){
+            if (counter % 3 != 0){
+                counter++;
+                
+            }
+            if (counter % 3 == 0){   
+                 spawnLetter();
+                 spawnTime += 1;
+                }
+        }
+        
         
     }
     

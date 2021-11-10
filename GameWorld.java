@@ -92,8 +92,7 @@ public class GameWorld extends World
         
       
        if (storedLetters.getSize() == 10){
-            List objects = getObjects(null);
-            removeObjects(objects); 
+            Greenfoot.setWorld(new Transition1(storedLetters));
        }
     }
     
@@ -111,7 +110,7 @@ public class GameWorld extends World
    
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(moveOn)){
-            Greenfoot.setWorld(new Transition1());
+            Greenfoot.setWorld(new Transition1(storedLetters));
         }
     }
     
