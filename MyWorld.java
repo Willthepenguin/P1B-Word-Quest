@@ -33,6 +33,9 @@ public class MyWorld extends World
         settings = new Button("Settings");
         addObject(settings, 600, 400);
         
+        GreenfootImage image = new GreenfootImage("Word.png");
+        image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
+        getBackground().drawImage(image, 0, 0);
 
     }
 

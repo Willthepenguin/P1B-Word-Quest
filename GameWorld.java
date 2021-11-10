@@ -4,7 +4,7 @@ import java.util.List;
 
 public class GameWorld extends World
 {
-    private Button moveOn;
+    
 
     
     public final Color streakaddColor = new Color (34, 177, 76);
@@ -36,8 +36,9 @@ public class GameWorld extends World
         
         super(800, 600, 1); 
      
-        moveOn = new Button ("Next");
-        addObject(moveOn, 700, 550);
+        GreenfootImage image = new GreenfootImage("Background.png");
+        image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
+        getBackground().drawImage(image, 0, 0);
         
               
     
@@ -71,7 +72,7 @@ public class GameWorld extends World
     }
     
     public void act() {
-        mouseClicked();
+       
         
         if (spawnTime != 27){
             if (counter % 3 != 0){
@@ -108,11 +109,7 @@ public class GameWorld extends World
     }
     
    
-    private void mouseClicked(){
-        if (Greenfoot.mouseClicked(moveOn)){
-            Greenfoot.setWorld(new Transition1(storedLetters));
-        }
-    }
+    
     
     
 }
