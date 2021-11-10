@@ -18,6 +18,9 @@ public class AssembleWorld extends World
     private int spawnTimeRemaining;
     private int counter = 0;
     
+    private int counter2 = 1;
+    private int counter3 = 30;
+    
     private StatBar timerBar;
     
     private Label label;
@@ -48,10 +51,16 @@ public class AssembleWorld extends World
         }
         
         
+        
         try{
             Reader.readIntoVerb(verbList);
             } catch(Exception e) {
         }
+        
+        
+        
+        
+        
         
      
     }
@@ -83,17 +92,21 @@ public class AssembleWorld extends World
         }
         
         
+            
+        
+        
     }
     
     public void spawnLetter(){
-        int randX = Greenfoot.getRandomNumber(600);
-        int randY = Greenfoot.getRandomNumber(350);
+        
+        
+        counter3 = 50*counter2;
         
         label = new Label (letterStorage.pop());
         
-        addObject(label, randX + 50, randY + 180);
+        addObject(label, counter3, 200);
         
-        
+        counter2++;
     }
     
     

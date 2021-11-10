@@ -56,6 +56,25 @@ public class LetterButton extends Actor
         
     }
     
+     
+    protected void addedToWorld(World GameWorld)
+     {
+        while(isTouching(LetterButton.class))
+        {
+            int tempX = Greenfoot.getRandomNumber(600);
+            int tempY = Greenfoot.getRandomNumber(350);
+            
+            tempX += 50;
+            tempY += 180;
+            setLocation(tempX, tempY);
+            
+            
+        }
+        
+    }
+    
+    
+    
     private void draw () {
         image.setColor(Color.WHITE);
         image.fill();
