@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Settings extends World
 {
 
-    private Button 
+    private Button time1;
     public Settings()
     {    
         
@@ -22,12 +22,7 @@ public class Settings extends World
     }
     
     private void mouseClicked(){
-        if (Greenfoot.mouseClicked(play)){
-            Greenfoot.setWorld(new Rules());
-        }
-        if(Greenfoot.mouseClicked(settings)){
-            Greenfoot.setWorld(new Settings());
-        }
+        
     }
     
     
