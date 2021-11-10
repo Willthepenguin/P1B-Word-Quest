@@ -27,6 +27,7 @@ public class AssembleWorld extends World
     
     Stack<String> letterStorage = new Stack<String>();
     ArrayList<String> verbList = new ArrayList<String>();
+    //Created new GreenfootSound for music file.
     private GreenfootSound assemble=new GreenfootSound("Kether battle 3.mp3");
     
     
@@ -34,6 +35,7 @@ public class AssembleWorld extends World
     public AssembleWorld(Stack<String> a)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        //Plays the music at 50% volume.
         super(800, 600, 1); 
         assemble.setVolume(50);
         assemble.playLoop();
@@ -80,7 +82,7 @@ public class AssembleWorld extends World
             timerBar.update(timeRemaining);
 
         }
-        
+        //If time runs out, stop the music and moves onto the end screen.
         if (timeRemaining == 0){
             Greenfoot.setWorld(new EndScreen());
             assemble.stop();
