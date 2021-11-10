@@ -16,7 +16,7 @@ public class LetterButton extends Actor
     private int counter = 10;
     
     private int timeReset = 0;
-    
+    private GreenfootSound click=new GreenfootSound("mixkit-video-game-retro-click-237.wav");
     
     public LetterButton (String text) {
         image = new GreenfootImage (40, 40);
@@ -42,10 +42,11 @@ public class LetterButton extends Actor
     {
         if(Greenfoot.mouseClicked(this) && counter != 0)
         {
-            
+            click.setVolume(50);
+            click.play();
             GameWorld thisWorld = (GameWorld) getWorld();
             thisWorld.storeLetter(text);
-          
+           
             thisWorld.removeObject(this);
             counter--;
         }
