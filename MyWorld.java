@@ -28,10 +28,10 @@ public class MyWorld extends World
         
         setBackground(drawSpace(800,600,40));
         play = new Button ("Play");
-        addObject(play, 200, 400);
+        addObject(play, 200, 500);
         
         settings = new Button("Settings");
-        addObject(settings, 600, 400);
+        addObject(settings, 600, 500);
         
         GreenfootImage image = new GreenfootImage("Word.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
@@ -56,6 +56,9 @@ public class MyWorld extends World
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(play)){
             Greenfoot.setWorld(new Rules());
+        }
+        if(Greenfoot.mouseClicked(settings)){
+            Greenfoot.setWorld(new Settings());
         }
     }
 }
