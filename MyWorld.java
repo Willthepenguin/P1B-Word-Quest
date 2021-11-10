@@ -13,6 +13,7 @@ public class MyWorld extends World
     private GreenfootImage background;
     private Button play;
     private Button settings;
+    //New GreenfootSound for music
     private GreenfootSound main=new GreenfootSound("P5 OST 02 Phantom.mp3");
     
 
@@ -25,6 +26,7 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+        //Plays the music
         main.playLoop();
         main.setVolume(50);
         setBackground(drawSpace(800,600,40));
@@ -55,6 +57,7 @@ public class MyWorld extends World
     }
     
     private void mouseClicked(){
+        //When you start playing, stop the music and display rules
         if (Greenfoot.mouseClicked(play)){
             main.stop();
             Greenfoot.setWorld(new Rules());
