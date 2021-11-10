@@ -7,7 +7,7 @@ public class LetterButton extends Actor
 
     private int drawX;
     private int drawY;
-    
+     
     private GreenfootImage image;
     private GreenfootImage touchingImage;
     
@@ -16,9 +16,10 @@ public class LetterButton extends Actor
     private int counter = 10;
     
     private int timeReset = 0;
-    
+    private GreenfootSound click=new GreenfootSound("mixkit-arcade-game-complete-or-approved-mission-205.wav");
     
     public LetterButton (String text) {
+        
         image = new GreenfootImage (40, 40);
         touchingImage = new GreenfootImage (180, 40);
         this.text = text;
@@ -44,6 +45,7 @@ public class LetterButton extends Actor
         {
             GameWorld world = (GameWorld) getWorld();
             world.storeLetter(text);
+            click.play();
             world.removeObject(this);
             counter--;
         }
