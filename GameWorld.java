@@ -27,6 +27,7 @@ public class GameWorld extends World
     
     static Stack<String> storedLetters = new Stack<String>();
     
+    private GreenfootSound play=new GreenfootSound("Drive Me Wild.mp3");
     
     private LetterButton label;
     
@@ -35,7 +36,9 @@ public class GameWorld extends World
     {    
         
         super(800, 600, 1); 
-     
+        play.setVolume(50);
+        play.playLoop();
+
         GreenfootImage image = new GreenfootImage("Background.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
         getBackground().drawImage(image, 0, 0);
@@ -94,6 +97,7 @@ public class GameWorld extends World
       
        if (storedLetters.getSize() == 10){
             Greenfoot.setWorld(new Transition1(storedLetters));
+            play.stop();
        }
     }
     
