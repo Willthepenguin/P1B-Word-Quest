@@ -20,7 +20,7 @@ public class AssembleWorld extends World
     
     private StatBar timerBar;
     
-    private LetterButton label;
+    private Label label;
     
     Stack<String> letterStorage = new Stack<String>();
     ArrayList<String> verbList = new ArrayList<String>();
@@ -89,7 +89,7 @@ public class AssembleWorld extends World
         int randX = Greenfoot.getRandomNumber(600);
         int randY = Greenfoot.getRandomNumber(350);
         
-        label = new LetterButton (letterStorage.pop());
+        label = new Label (letterStorage.pop());
         
         addObject(label, randX + 50, randY + 180);
         
