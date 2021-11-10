@@ -30,13 +30,12 @@ public class GameWorld extends World
     private LetterButton label;
     
     private int counter = 0;
-    private GreenfootSound play=new GreenfootSound("Drive Me Wild.mp3");
+    
     public GameWorld()
     {    
         
         super(800, 600, 1); 
-        play.playLoop();
-        play.setVolume(50);
+        
         moveOn = new Button ("Next");
         addObject(moveOn, 700, 550);
         
@@ -93,12 +92,12 @@ public class GameWorld extends World
         
         if (timeRemaining == 0){
             Greenfoot.setWorld(new Transition1());
-            play.stop();
+           
         }
         
         if (storedLetters.getSize() == 10){
             Greenfoot.setWorld(new Transition1());
-            play.stop();
+            
         }
     }
     
@@ -117,7 +116,7 @@ public class GameWorld extends World
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(moveOn)){
             Greenfoot.setWorld(new Transition1());
-            play.stop();
+            
         }
     }
     
