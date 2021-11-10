@@ -26,7 +26,7 @@ public class GameWorld extends World
     ArrayList<String> theList = new ArrayList<String>();
     
     static Stack<String> storedLetters = new Stack<String>();
-    
+    //Creates new Greenfootsound for music.
     private GreenfootSound play=new GreenfootSound("Drive Me Wild.mp3");
     
     private LetterButton label;
@@ -35,7 +35,8 @@ public class GameWorld extends World
     public GameWorld()
     {    
         
-        super(800, 600, 1); 
+        super(800, 600, 1);
+        //Plays the music
         play.setVolume(50);
         play.playLoop();
 
@@ -96,6 +97,7 @@ public class GameWorld extends World
         
       
        if (storedLetters.getSize() == 10){
+       //When you've fetched enough letters, stop the music and move on to the next world.
             Greenfoot.setWorld(new Transition1(storedLetters));
             play.stop();
        }
