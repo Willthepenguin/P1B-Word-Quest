@@ -14,13 +14,13 @@ public class AssembleWorld extends World
     private int timeRemaining;
     
     private StatBar timerBar;
-    private GreenfootSound assemble=new GreenfootSound("Kether battle 3.mp3");
+    
     public AssembleWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        assemble.playLoop();
-        assemble.setVolume(50);
+        
+        
         
         time = 55*60;
         timeRemaining = time;
@@ -41,7 +41,7 @@ public class AssembleWorld extends World
         
         if (timeRemaining == 0){
             Greenfoot.setWorld(new EndScreen());
-            assemble.stop();
+            
         }
     }
 }
