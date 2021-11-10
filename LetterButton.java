@@ -20,7 +20,7 @@ public class LetterButton extends Actor
     
     public LetterButton (String text) {
         image = new GreenfootImage (40, 40);
-        touchingImage = new GreenfootImage (180, 40);
+        touchingImage = new GreenfootImage (40, 40);
         this.text = text;
         // Prepare for centering:
         // How many letters?
@@ -36,6 +36,7 @@ public class LetterButton extends Actor
         draw();
         setImage (image);
         
+        
     }
     
     public void act() 
@@ -50,7 +51,22 @@ public class LetterButton extends Actor
         
         
         
+        
+        
     }
+    
+    protected void addedtoWorld(World GameWorld)
+    {
+        while(isTouching(LetterButton.class))
+        {
+            int x = Greenfoot.getRandomNumber(GameWorld.getWidth());
+            int y = Greenfoot.getRandomNumber(GameWorld.getHeight());
+            setLocation(x,y);
+        }
+    }
+    
+    
+    
     
     private void draw () {
         image.setColor(Color.WHITE);
