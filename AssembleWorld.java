@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class AssembleWorld extends World
 {
@@ -11,12 +12,16 @@ public class AssembleWorld extends World
     
     public final Color timeStillColor = new Color (34, 177, 76);
     public final Color timeLeftColor = new Color (255, 0, 0);
-
+    
+    private Button type;
+    private Button check;
+    
     private int time;
     private int timeRemaining;
     private int spawnTime;
     private int spawnTimeRemaining;
     private int counter = 0;
+
     
     private int counter2 = 1;
     private int counter3 = 30;
@@ -27,22 +32,23 @@ public class AssembleWorld extends World
     
     Stack<String> letterStorage = new Stack<String>();
     ArrayList<String> verbList = new ArrayList<String>();
-    //Created new GreenfootSound for music file.
-    private GreenfootSound assemble=new GreenfootSound("Kether battle 3.mp3");
     
-    
+    ArrayList<String> answerList = new ArrayList<String>();
     
     public AssembleWorld(Stack<String> a)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        //Plays the music at 50% volume.
         super(800, 600, 1); 
-        assemble.setVolume(50);
-        assemble.playLoop();
+        
         GreenfootImage image = new GreenfootImage("Background.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
         getBackground().drawImage(image, 0, 0);
-      
+          
+        Button type = new Button("Enter a word");
+        addObject(type, 700, 300);
+        
+        Button check = new Button("Check my Answer");
+        addObject(check, 100, 300);
         
         time = 55*60;
         timeRemaining = time;
@@ -64,7 +70,7 @@ public class AssembleWorld extends World
             } catch(Exception e) {
         }
         
-        
+                
         
         
         
@@ -82,10 +88,9 @@ public class AssembleWorld extends World
             timerBar.update(timeRemaining);
 
         }
-        //If time runs out, stop the music and moves onto the end screen.
+        
         if (timeRemaining == 0){
             Greenfoot.setWorld(new EndScreen());
-            assemble.stop();
         }
 
         if (spawnTime != 10){
@@ -99,14 +104,21 @@ public class AssembleWorld extends World
                 }
         }
         
+        if(Greenfoot.mouseClicked(type)){
+            String input = Greenfoot.ask("Input a Word");
+            answerList.add(input);
+        }
         
-            
+        if(Greenfoot.mouseClicked(check)){
+            checkWord();
+        }
+        
         
         
     }
     
     public void spawnLetter(){
-        
+            
         
         counter3 = 50*counter2;
         
@@ -117,6 +129,17 @@ public class AssembleWorld extends World
         counter2++;
     }
     
+    public void checkWord(){
+        for (int i = 0; i < answerList.size(); i++){
+                for (int j = 0; i < verbList.size(); j++){
+                if (answerList.get(i).equals(verbList.get(j))){
+                    Score.score++;
+                }else {
+                    j = 0;
+                }
+            }
+        }
+    }
     
     
 }
