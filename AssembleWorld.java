@@ -27,6 +27,7 @@ public class AssembleWorld extends World
     
     Stack<String> letterStorage = new Stack<String>();
     ArrayList<String> verbList = new ArrayList<String>();
+    private GreenfootSound assemble=new GreenfootSound("Kether battle 3.mp3");
     
     
     
@@ -34,7 +35,8 @@ public class AssembleWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+        assemble.setVolume(50);
+        assemble.playLoop();
         GreenfootImage image = new GreenfootImage("Background.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
         getBackground().drawImage(image, 0, 0);
@@ -81,6 +83,7 @@ public class AssembleWorld extends World
         
         if (timeRemaining == 0){
             Greenfoot.setWorld(new EndScreen());
+            assemble.stop();
         }
 
         if (spawnTime != 10){
