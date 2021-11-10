@@ -10,11 +10,13 @@ public class Rules extends World
 {
     private Button cont;
     private GreenfootImage background;
+    //New Greenfootsound for music
     private GreenfootSound rule=new GreenfootSound("Netzach battle.mp3");
     public Rules()
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
+        //Plays music
         rule.setVolume(50);
         rule.playLoop();
         GreenfootImage image = new GreenfootImage("Background.png");
@@ -36,6 +38,7 @@ public class Rules extends World
     }
     
     private void mouseClicked(){
+        //Once you click on continue, stop the music and start the game.
         if (Greenfoot.mouseClicked(cont)){
             rule.stop();
             Greenfoot.setWorld(new GameWorld());
