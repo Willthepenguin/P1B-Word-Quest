@@ -9,13 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Transition1 extends World
 {
     private Button confirm;
-    
+    private GreenfootSound transition=new GreenfootSound("P5 OST 09 Beneath the Mask  Instrumental Version.mp3");
     Stack<String> store = new Stack<String>();
     public Transition1(Stack<String> s)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+        transition.setVolume(50);
+        transition.playLoop();
         GreenfootImage image = new GreenfootImage("Background.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
         getBackground().drawImage(image, 0, 0);
@@ -39,6 +40,7 @@ public class Transition1 extends World
     
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(confirm)){
+            transition.stop();
             Greenfoot.setWorld(new AssembleWorld(store));
         }
     }
