@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=LetterButton
+comment1.params=text
+comment1.target=LetterButton(java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=GameWorld
+comment3.target=void\ addedToWorld(greenfoot.World)
+comment4.params=
+comment4.target=void\ draw()
+numComments=5
