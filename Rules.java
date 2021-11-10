@@ -10,12 +10,13 @@ public class Rules extends World
 {
     private Button cont;
     private GreenfootImage background;
-    
+    private GreenfootSound rule=new GreenfootSound("Netzach battle.mp3");
     public Rules()
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
-        
+        super(800, 600, 1);
+        rule.setVolume(50);
+        rule.playLoop();
         GreenfootImage image = new GreenfootImage("Background.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
         getBackground().drawImage(image, 0, 0);
@@ -36,6 +37,7 @@ public class Rules extends World
     
     private void mouseClicked(){
         if (Greenfoot.mouseClicked(cont)){
+            rule.stop();
             Greenfoot.setWorld(new GameWorld());
         }
     }
