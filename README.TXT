@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
+Word Quest is a game where you collect up to 10 letters, and form as many words as possible using only those letters.
+Click to interact with letters and buttons.
+Type your answer by clicking at the bottom of the screen.
 ------------------------------------------------------------------------
 
 PROJECT TITLE: Word Quest
