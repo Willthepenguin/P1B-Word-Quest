@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=void\ spawnLetter()
 comment4.params=
 comment4.target=void\ checkWord()
-numComments=5
+comment5.params=
+comment5.target=void\ charCheck()
+numComments=6

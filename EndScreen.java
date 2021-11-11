@@ -27,11 +27,11 @@ public class EndScreen extends World
         getBackground().drawImage(image, 0, 0);
         
         getBackground().drawImage(new GreenfootImage("Thanks for Playing!" ,32, null, null), 275, 100);
-        getBackground().drawImage(new GreenfootImage("Your Score:" ,32, null, null), 325, 200);
+        getBackground().drawImage(new GreenfootImage("Your Score:" + Score.score ,32, null, null), 325, 200);
         //Score
         // getBackground().drawImage(new GreenfootImage(score ,32, null, null), 350, 350);
         
-        getBackground().drawImage(new GreenfootImage("Our Personal High Scores!" ,32, null, null), 250, 450);
+        getBackground().drawImage(new GreenfootImage("Our Personal High Scores! \n 1. Andrew - Over 9000  \n 2. William - 2?\n 3. Jacky - 69420 :D" ,32, null, null), 250, 450);
         
     }
 }

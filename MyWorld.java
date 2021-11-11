@@ -12,7 +12,7 @@ public class MyWorld extends World
     
     private GreenfootImage background;
     private Button play;
-    private Button settings;
+    
     //New GreenfootSound for music
     private GreenfootSound main=new GreenfootSound("P5 OST 02 Phantom.mp3");
     
@@ -31,10 +31,9 @@ public class MyWorld extends World
         main.setVolume(50);
         setBackground(drawSpace(800,600,40));
         play = new Button ("Play");
-        addObject(play, 200, 400);
+        addObject(play, 400, 500);
         
-        settings = new Button("Settings");
-        addObject(settings, 600, 400);
+        
         
         GreenfootImage image = new GreenfootImage("Word.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);

@@ -4,6 +4,7 @@ public class LetterButton extends Actor
 {
     public static final double FONT_RATIO = 0.58;
     private String text;
+    private String text1;
 
     private int drawX;
     private int drawY;
@@ -17,7 +18,7 @@ public class LetterButton extends Actor
     
     private int timeReset = 0;
     //Creates a new GreenfootSound for clicking sound.
-    private GreenfootSound click=new GreenfootSound("mixkit-video-game-retro-click-237.wav");
+    private GreenfootSound click = new GreenfootSound("mixkit-video-game-retro-click-237.wav");
     
     public LetterButton (String text) {
         image = new GreenfootImage (40, 40);
@@ -44,10 +45,11 @@ public class LetterButton extends Actor
         if(Greenfoot.mouseClicked(this) && counter != 0)
         {
             //Plays the clicking sound whenever you take a letter.
-            click.setVolume(50);
+            click.setVolume(100);
             click.play();
             GameWorld thisWorld = (GameWorld) getWorld();
             thisWorld.storeLetter(text);
+            
            
             thisWorld.removeObject(this);
             counter--;

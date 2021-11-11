@@ -26,6 +26,7 @@ public class GameWorld extends World
     ArrayList<String> theList = new ArrayList<String>();
     
     static Stack<String> storedLetters = new Stack<String>();
+    
     //Creates new Greenfootsound for music.
     private GreenfootSound play=new GreenfootSound("Drive Me Wild.mp3");
     
@@ -73,6 +74,7 @@ public class GameWorld extends World
     public void storeLetter(String text)
     {
         storedLetters.push(text);
+        
     }
     
     public void act() {
