@@ -4,6 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Label extends Actor
 {
     //Instance Variables
+    // Different font ratio so smaller than actual 60 font.
     public static final double FONT_RATIO = 0.42;
     
     private boolean touching;

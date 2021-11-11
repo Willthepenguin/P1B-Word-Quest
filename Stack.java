@@ -1,5 +1,5 @@
 import java.util.Iterator;
-
+// Standard Generic Stack we learned in class.
 public class Stack<E> implements Iterable<E>
 {
     private Node first = null;

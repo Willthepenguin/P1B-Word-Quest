@@ -10,7 +10,7 @@ public class Button extends Actor
     
     private GreenfootImage image;
     private GreenfootImage touchingImage;
-    
+    // Where you declare what font and size.
     private Font buttonFont = new Font("Courier New",  true,  false,  24);
     
     // Button, Label and LetterButton are very similar code.
@@ -25,14 +25,17 @@ public class Button extends Actor
         // Prepare for centering:
         // How many letters?
         int wordLength = myText.length();  
-        // How many pixels?
-        int wordWidth = (int)(wordLength * buttonFont.getSize() * FONT_RATIO); 
+        // How many pixels wide?
+        int wordWidth = (int)(wordLength * buttonFont.getSize() * FONT_RATIO);
+        // Does the math for x and y to ensure it is centered.
+        // Get the (image length-length of words)/2 so it draws where at the end will line up.
         drawX = (image.getWidth() - wordWidth)/2;
+        // Gets image height - (image height-font size) to get correct height
         drawY = image.getHeight() - (image.getHeight() - buttonFont.getSize()) /2;
         //System.out.println("ww: " + wordWidth + " drawX: " + drawX);
       
         
-        
+        // Actually draws the button filling background then drawing text.
         draw();
         setImage (image);
         
@@ -41,7 +44,7 @@ public class Button extends Actor
     public void act() 
     {
         setImage(image);
-        
+        // Placed the image drawn when you add a button to a world.
     }
     
     private void draw () {

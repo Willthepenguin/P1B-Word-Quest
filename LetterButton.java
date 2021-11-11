@@ -40,9 +40,10 @@ public class LetterButton extends Actor
     
     public void act() 
     {
+        // If you click on a letter and you don't have 10 letters already.
         if(Greenfoot.mouseClicked(this) && counter != 0)
         {
-            
+            // Stores text into an 
             GameWorld thisWorld = (GameWorld) getWorld();
             thisWorld.storeLetter(text);
           
