@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MyWorld extends World
 {
-    
+    // Constructors for objects in MyWorld
     private GreenfootImage background;
     private Button play;
     
@@ -29,12 +29,17 @@ public class MyWorld extends World
         //Plays the music
         main.playLoop();
         main.setVolume(50);
+        
+        // Change the background to blue
         setBackground(drawSpace(800,600,40));
+        // Create a button called play and add the button to the world.
         play = new Button ("Play");
         addObject(play, 400, 500);
         
         
-        
+        // So image is the picture, scaled it to 800 by 600 pixels
+        // and then added the picture to the image at 0,0 so it fully covers old background.
+
         GreenfootImage image = new GreenfootImage("Word.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
         getBackground().drawImage(image, 0, 0);
@@ -43,6 +48,7 @@ public class MyWorld extends World
 
     public void act ()
     {
+        // Continously checks if mouse clicked the button
         mouseClicked();
     }
     
@@ -59,6 +65,7 @@ public class MyWorld extends World
         //When you start playing, stop the music and display rules
         if (Greenfoot.mouseClicked(play)){
             main.stop();
+            // If mouse click play button, go to Rules world.
             Greenfoot.setWorld(new Rules());
         }
     }

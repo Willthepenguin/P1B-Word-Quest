@@ -1,5 +1,5 @@
 import java.util.Iterator;
-
+// Standard generic queue that we learned in class
 public class Queue<T> implements Iterable<T>
 {
     private Node first, last;

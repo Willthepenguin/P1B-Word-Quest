@@ -15,7 +15,8 @@ public class Score extends Actor
     public void addScore(int amount){
         
 
-        
+        // Shows the score you have in AssembleWorld
+        // null for the colour so it stays the same colour as background
         score += amount;
         setImage(new GreenfootImage("Score : " + score, 80, null, null));
  

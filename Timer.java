@@ -13,6 +13,7 @@ public class Timer extends Actor
     public void act()
     {
         timer--;
+        // Every 60 ticks(1 second), it refreshes the time.
         if (timer % 55 == 0) { 
             updateImage();
         }

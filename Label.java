@@ -15,7 +15,7 @@ public class Label extends Actor
     
     private GreenfootImage image;
 
-    
+    // Change the font as this is used for AssembleWorld with bigger font.
     private Font buttonFont = new Font("Calibri", true, false, 60);
     
     public Label(String text)

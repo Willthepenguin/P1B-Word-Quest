@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Rules extends World
 {
+    // Consturtors for Rules world and for button and background image.
     private Button cont;
     private GreenfootImage background;
     //New Greenfootsound for music
@@ -19,14 +20,19 @@ public class Rules extends World
         //Plays music
         rule.setVolume(50);
         rule.playLoop();
+        
+        // Set image as that picture in images folder, scaled to 800 by 600
+        // Then put it at 0,0 so it is new background
         GreenfootImage image = new GreenfootImage("Background.png");
         image.scale(image.getWidth()*8/5, image.getHeight()*6/5);
         getBackground().drawImage(image, 0, 0);
         
-        
+        // Initialize button as cont and added it to world
         cont = new Button ("Continue");
         addObject(cont, 400, 500);
-        
+        // Added the text to the world at a certain coordinate.
+        // null for the colours so the image will match the same colour as background
+
         getBackground().drawImage(new GreenfootImage("You have 60 seconds to pick up 10 letters choose wisely!" ,32, null, null), 50, 100);
         getBackground().drawImage(new GreenfootImage("Use your mouse to click on the letters you want to pick up.", 32, null, null) , 50, 200);
         
