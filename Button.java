@@ -13,7 +13,11 @@ public class Button extends Actor
     
     private Font buttonFont = new Font("Courier New",  true,  false,  24);
     
-    
+    // Button, Label and LetterButton are very similar code.
+    // They are based on this class that Mr.Cohen gave us last year
+    // It makes the button, writes the text and make it centered.
+    // This class was used to make Buttons with black box and words in middle.
+    // In MyWorld, Rules, Transition1
     public Button (String text) {
         image = new GreenfootImage (180, 40);
         touchingImage = new GreenfootImage (180, 40);

@@ -16,7 +16,7 @@ public class LetterButton extends Actor
     private int counter = 10;
     
     private int timeReset = 0;
-    
+    // This class was used for the letters you picked up in GameWorld.
     
     public LetterButton (String text) {
         image = new GreenfootImage (40, 40);
@@ -56,14 +56,16 @@ public class LetterButton extends Actor
         
     }
     
-     
+    // Added the addedToWorld which automatically does the stuff inside without manually calling it. 
     protected void addedToWorld(World GameWorld)
      {
+        // So when the letters in GameWorld spawn, if they touch or overlap each other.
         while(isTouching(LetterButton.class))
         {
             int tempX = Greenfoot.getRandomNumber(600);
             int tempY = Greenfoot.getRandomNumber(350);
-            
+            // Assigns new random coordinates
+            // It's while loop so it can repeat multiple times if necessary.
             tempX += 50;
             tempY += 180;
             setLocation(tempX, tempY);
@@ -74,7 +76,7 @@ public class LetterButton extends Actor
     }
     
     
-    
+    // White background and blue font this time.
     private void draw () {
         image.setColor(Color.WHITE);
         image.fill();

@@ -17,7 +17,7 @@ public class Label extends Actor
 
     
     private Font buttonFont = new Font("Calibri", true, false, 60);
-    
+    // This class was for the letters in the AssembleWorld with different fonts
     public Label(String text)
     {
         image = new GreenfootImage (1800, 200);
